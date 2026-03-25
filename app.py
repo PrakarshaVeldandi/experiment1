@@ -1,6 +1,6 @@
 from flask import Flask
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 def add(a, b):
     return a + b
@@ -9,5 +9,5 @@ def add(a, b):
 def home():
     return "Addition: " + str(add(5, 3))
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
