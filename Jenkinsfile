@@ -22,13 +22,12 @@ pipeline {
         }
 
         stage('Deploy Application') {
-    steps {
-        sh '''
-            pkill -f "python3 app.py" || true
-            nohup python3 app.py > nohup.out 2>&1 &
-        '''
-    }
-}
+            steps {
+                sh '''
+                    pkill -f "python3 app.py" || true
+                    nohup python3 app.py > nohup.out 2>&1 &
+                '''
+            }
         }
     }
 }
