@@ -22,12 +22,7 @@ pipeline {
 
         stage('Deploy Application') {
             steps {
-                sh '''
-                    pkill -f "python3 app.py" || true
-                    export BUILD_ID=dontKillMe
-                    nohup python3 app.py > nohup.out 2>&1 &
-                    sleep 5
-                '''
+                sh 'pkill -f "python3 app.py" || true; BUILD_ID=dontKillMe nohup python3 app.py > nohup.out 2>&1 &'
             }
         }
     }
